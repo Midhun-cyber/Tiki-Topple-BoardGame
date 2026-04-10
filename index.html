@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Tiki Topple — Totem Dominion | Woodland Board Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Dark Mode Toggle -->
+<button class="dark-mode-toggle" id="darkModeToggle">🌙 Dark Mode</button>
+
+<!-- Page 1: Setup / Welcome Screen -->
+<div id="setupPage" class="page active">
+  <div class="setup-page">
+    <div class="setup-card">
+      <div class="setup-title">🏝️ TIKI TOPPLE 🏝️</div>
+      <div class="setup-sub">🌿 WOODLAND BOARD GAME · LIGHT STRATEGY 🌿</div>
+      
+      <div class="player-count-section">
+        <div class="player-count-label">👥 NUMBER OF TRIBES:</div>
+        <div class="player-count-buttons">
+          <button class="count-btn" data-count="2">2 Players</button>
+          <button class="count-btn" data-count="3">3 Players</button>
+          <button class="count-btn" data-count="4">4 Players</button>
+          <button class="count-btn" data-count="ai" style="background:#9b59b6; color:white;">🤖 VS AI (1 Player)</button>
+        </div>
+      </div>
+
+      <div class="players-names-section" id="playersNamesContainer">
+        <!-- Dynamic name inputs will appear here -->
+      </div>
+
+      <button id="startGameBtn" class="start-btn">🔥 START THE RITUAL 🔥</button>
+    </div>
+  </div>
+</div>
+
+<!-- Page 2: Game Screen -->
+<div id="gamePage" class="page hidden">
+  <div class="game-container">
+    <div class="tiki-header">
+      <div class="title-glow">🏝️ TIKI TOPPLE 🏝️</div>
+      <div class="sub">🌿 WOODLAND BOARD GAME · LIGHT STRATEGY 🌿</div>
+    </div>
+    <div class="status-shaman" id="statusMsg">
+      🌺 Welcome! Choose tribe size and begin the totem ritual.
+    </div>
+    <div class="game-grid">
+      <div class="panel" id="playersPanel">
+        <div class="panel-title">🗿 WARRIOR TRIBES</div>
+        <div id="playersContainer" class="players-wrapper"></div>
+        <div style="margin-top: 16px; background: #e5ddc6; border-radius: 20px; padding: 6px 12px;">
+          <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight:bold;">
+            <span>🌋 ROUND CYCLE</span><span id="turnCounter">0 / 12</span>
+          </div>
+          <div style="height: 8px; background: #cfbc97; border-radius: 8px; margin-top: 4px;">
+            <div id="turnProgressFill" style="width: 0%; height: 8px; background: #eba45a; border-radius: 8px;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="totem-shrine">
+        <div style="text-align: center; font-size: 32px; margin-bottom: 8px">🔥🪶🌴</div>
+        <div id="totemStack" class="totem-stack"></div>
+        <div style="text-align: center; margin-top: 14px; font-size: 12px; background: #f5ebd9aa; border-radius: 40px; padding: 4px; font-weight:bold;">
+          ✨ click a tiki when a card is selected ✨
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-title">🃏 SPIRIT CARDS</div>
+        <div id="actionPanel">
+          <div style="text-align: center; padding: 20px;">⚡ Set players & press "NEW GAME" ⚡</div>
+        </div>
+      </div>
+    </div>
+    <div class="ctrl-bar-bottom">
+      <button class="ctrl-btn primary" id="newGameBtn">🌴 NEW GAME 🌴</button>
+      <button class="ctrl-btn" id="rulesBtn">📜 TIKI LORE</button>
+      <button class="ctrl-btn" id="backToSetupBtn">🏠 MAIN MENU</button>
+    </div>
+  </div>
+</div>
+
+<div id="gameOverlay" class="overlay hidden">
+  <div class="overlay-card">
+    <h2 id="overlayTitle">🏆 TIKI MASTER 🏆</h2>
+    <div id="overlayText" style="margin: 16px 0"></div>
+    <div id="rankingList"></div>
+    <button id="closeOverlayBtn" class="ctrl-btn primary" style="margin-top: 20px">🌺 PLAY AGAIN</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
