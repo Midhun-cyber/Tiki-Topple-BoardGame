@@ -214,7 +214,7 @@ Best suited for:
 
 ## 👨‍💻 Author
 
-**Midhun**
+**Midhun V S**
 B.Tech CSE (Data Science with ML)
 Lovely Professional University
 
